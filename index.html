@@ -1,62 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Podcast App</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script defer src="./scripts.js/events.js" type="module"></script>
-</head>
-<body>
-<header>
-    <div class="logo-section">
-        <img src="./podcast-photos/podcast-logo.jpg" alt="Podcast logo picture" width="50">
-        <h1>PodcastApp</h1>
-    </div>
-    <div class="header-icons">
-        <button type="search"><i class="fa fa-search"></i></button>
-        <img src="./podcast-photos/podcast-logo.jpg" alt="Barbie logo" width="50">
-    </div>
-</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PodcastApp</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>🎙️ Podcast App</h1>
+    </header>
 
-<section class="filters">
-    <h3>filter by:</h3>
-    <select id="genre-select">
-        <option value="all-genre">All Genres</option>
-        <option value="genre1">Genre 1</option>
-        <option value="genre2">Genre 2</option>
-        <option value="genre3">Genre 3</option>
-    </select>
+    <main id="podcastGrid" class="grid"></main>
 
-    <select id="recent-update">
-        <option value="recently-updated">Recently Updated</option>
-        <option value="most-popular">Most Popular</option>
-        <option value="newest">Newest</option>
-    </select>
-</section>
-
-<main id="podcast-list">
-    <!-- Podcast items will be dynamically inserted here -->
-</main>
-
-<!-- Modal -->
- <div id="podcast-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <img id="modal-cover" class="cover-image" src="" alt="Podcast cover">
-        <div class="modal-info">
-            <h2 id="modal-title">Podcast title</h2>
-            <p id="modal-description"></p>
-            <div id="modal-genres" class="genres"></div>
-            <p id="modal-updated">Last updated: <span id="modal-updated-date"></span></p>
+    <!-- Modal -->
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <div class="title-section">
+          <h2 id="modalTitle"></h2>
+          <button class="close-btn" id="closeModal">&times;</button>
         </div>
+        <div class="banner">
+          <img id="modalImage" class="modal-img" />
+          <div class="info-section">
+            <h3>Description</h3>
+            <p id="modalDesc"></p>
+            <h3>Genres</h3>
+            <div id="modalGenres" class="tags"></div>
+            <p id="modalUpdated" class="modal-updated-text"></p>
+          </div>
+        </div>
+        <h3>Seasons</h3>
+        <ul id="seasonList" class="season-list"></ul>
+      </div>
     </div>
 
-    <div class="modal-seasons">
-        <h3>Seasons</h3>
-        <ul id="modal-seasons-list"></ul>
-    </div>
- </div>
-</body>
+    <script type="module" defer src="./src/index.js"></script>
+  </body>
 </html>
